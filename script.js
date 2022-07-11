@@ -1,14 +1,24 @@
-// Create an array
 let myArray = ['rock', 'paper', 'scissors']
-// Allow for a random string to be returned from the array
-// write a function that will serve as the computer selecting the string at random
 function computerPlay() {
-    let randomValue = myArray[Math.floor(Math.random() * myArray.length)];
+   let randomValue = myArray[Math.floor(Math.random() * myArray.length)];
     return randomValue
 }
-// write a function that plays a single round of RPS and should take two parameters
+let playerScore = parseInt(0);
+let computerScore = parseInt(0);
+
+// setting variables for computer/playerscore
+const playerPoints = document.querySelector('.player-points');
+const computerPoints = document.querySelector('.computer-points');
+// setting users buttons for event lsiteners
+const rockButton = document.querySelector('.rock-button');
+const paperButton = document.querySelector('.paper-button');
+const scissorsButton = document.querySelector('.scissors-button');
+
+// function to play the game for one round
 function playRound(playerSelection, computerSelection) {
-    if (playerSelection.toLowerCase() == computerSelection.toLowerCase()) {
+    playerSelection = this.dataset.button;
+    computerSelection = computerPlay();
+    if (playerSelection == computerSelection) {
         console.log('It\'s a tie!')
         return
     }   else if ((playerSelection == 'rock' && computerSelection == 'scissors') || 
@@ -16,30 +26,17 @@ function playRound(playerSelection, computerSelection) {
                  (playerSelection == 'scissors' && computerSelection == 'paper')) {
         console.log('The human wins!');
         console.log(playerScore += 1);
+        playerPoints.textContent = `${playerScore}`
         return
     }   else {
         console.log('The computer wins!');
         console.log(computerScore += 1);
+        computerPoints.textContent = `${computerScore}`;
         return
     }
 }
-// write two variables playerSelection, computerSelection
-// and two more variables for score
-let playerScore = parseInt(0);
-let computerScore = parseInt(0);
-// the function should return a string with the result of the match
-// console.log(playRound(playerSelection, computerSelection));
-// playerSelection should be case insensitive
-// write a function called game() that calls the match function 5 times with a for loop and console.log the results
-function game(){
-    for (i = 0; i < 5; i++){
-    let playerSelection = prompt('Choose your weapon');
-    const computerSelection = computerPlay();
-    console.log(playRound(playerSelection, computerSelection));
-    console.log('Your score = ' + playerScore);
-    console.log('Computer\'s score = ' + computerScore);
-}
-}
 
-//console.log(game())
-// prompt() should be used to get a user input
+// event listeners for the buttons
+rockButton.addEventListener('click', playRound);
+paperButton.addEventListener('click', playRound);
+scissorsButton.addEventListener('click', playRound);

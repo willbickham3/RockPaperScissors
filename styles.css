@@ -1,5 +1,29 @@
+body {
+  background-color: #ccc;
+}
 .main-title {
   text-align: center; 
   color: aquamarine; 
   background-color: black;
+}
+.btn-container {
+  display: flex;
+  justify-content: space-around;
+}
+
+.btn {
+  font-size: 4rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+.results {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  margin-top: 1rem;
+}
+
+.score {
+  font-size: 2rem;
 }
