@@ -35,6 +35,11 @@ button {
   cursor: pointer;
   flex: 1 1 auto;
 }
+
+button:hover {
+  transform: scale(1.2);
+}
+
 .results {
   display: flex;
   justify-content: center;
