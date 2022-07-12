@@ -1,18 +1,31 @@
 body {
   background-color: #ccc;
+  margin: 0px;
 }
+
+.game {
+  display: flex;
+  flex-direction: column;
+  border: 3px solid #000;
+  justify-content: center;
+  background-color: steelblue;
+  margin: 0px;
+}
+
 .main-title {
   text-align: center; 
   color: aquamarine; 
-  background-color: black;
-}
-.btn-container {
-  display: flex;
-  justify-content: space-around;
 }
 
-.btn {
-  font-size: 4rem;
+.btn-container {
+  display: flex;
+  justify-content: center;
+  gap: 60px;
+  /* border: 2px solid #000; */
+}
+
+button {
+  font-size: 6rem;
   background: none;
   border: none;
   cursor: pointer;
@@ -26,4 +39,10 @@ body {
 
 .score {
   font-size: 2rem;
+}
+
+.result {
+  font-size: 2rem;
+  text-align: center;
+  margin-top: 10px;
 }
