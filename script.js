@@ -14,6 +14,9 @@ const rockButton = document.querySelector('.rock-button');
 const paperButton = document.querySelector('.paper-button');
 const scissorsButton = document.querySelector('.scissors-button');
 
+// naming variable for results
+const results = document.querySelector('.result')
+
 // function to play the game for one round
 function playRound(playerSelection, computerSelection) {
     playerSelection = this.dataset.button;
@@ -26,12 +29,24 @@ function playRound(playerSelection, computerSelection) {
                  (playerSelection == 'scissors' && computerSelection == 'paper')) {
         console.log('The human wins!');
         console.log(playerScore += 1);
-        playerPoints.textContent = `${playerScore}`
+        playerPoints.textContent = `${playerScore}`;
+                    if (playerScore == 5) {
+                        results.textContent = `You are victorious! Your score is ${playerScore} and the computer scored ${computerScore}!`
+                        rockButton.removeEventListener('click', playRound);
+                        paperButton.removeEventListener('click', playRound);
+                        scissorsButton.removeEventListener('click', playRound);
+                    }
         return
     }   else {
         console.log('The computer wins!');
         console.log(computerScore += 1);
         computerPoints.textContent = `${computerScore}`;
+                    if (computerScore == 5) {
+                            results.textContent = `You lose :( Your score is ${playerScore} and the computer scored ${computerScore}!`
+                            rockButton.removeEventListener('click', playRound);
+                            paperButton.removeEventListener('click', playRound);
+                            scissorsButton.removeEventListener('click', playRound);
+                    }
         return
     }
 }
