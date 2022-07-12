@@ -44,7 +44,7 @@ function playRound(playerSelection, computerSelection) {
         console.log('The computer wins!');
         console.log(computerScore += 1);
         computerPoints.textContent = `${computerScore}`;
-        round.textContent = `You\'ve lost this round! You chose ${playerSelection} while the computer chose ${computerSelection}`;
+        round.textContent = `You\'ve lost this round! You chose ${playerSelection} while the computer chose ${computerSelection}.`;
                     if (computerScore == 5) {
                             results.textContent = `You lose :( Your score is ${playerScore} and the computer scored ${computerScore}!`
                             rockButton.removeEventListener('click', playRound);
